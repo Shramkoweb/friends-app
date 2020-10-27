@@ -162,7 +162,7 @@ const init = async () => {
     render(state);
 
     resetElement.addEventListener('click', handleResetClick);
-    formElement.addEventListener('input', handleFormInput);
+    formElement.addEventListener('input', debounced(300, handleFormInput));
 };
 
 init();
