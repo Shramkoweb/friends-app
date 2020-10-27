@@ -25,6 +25,7 @@ const state = {
 const listElement = document.querySelector('.friends__list');
 const formElement = document.querySelector('.form');
 const resetElement = document.querySelector('.form__reset');
+const notificationElement = document.querySelector('.notification');
 
 const handleResetClick = () => {
     state.search = '';
@@ -139,7 +140,7 @@ const loadUsers = (url) => {
             state.users = results;
             return results;
         }).catch((error) => {
-            console.log(error);
+            notificationElement.textContent = error;
         });
 };
 
